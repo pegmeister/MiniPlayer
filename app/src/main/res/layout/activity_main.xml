@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_background"
+    tools:context="com.example.android.miniplayer.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/category_pop">
+
+            <TextView
+                android:id="@+id/pop"
+                style="@style/CategoryStyle"
+                android:text="@string/category_pop" />
+
+            <ImageView
+                android:id="@+id/pop_list"
+                style="@style/ListStyle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:contentDescription="@string/expand"
+                android:src="@drawable/ic_toc" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/category_rock">
+
+            <TextView
+                android:id="@+id/rock"
+                style="@style/CategoryStyle"
+                android:text="@string/category_rock" />
+
+            <ImageView
+                android:id="@+id/rock_list"
+                style="@style/ListStyle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:contentDescription="@string/expand"
+                android:src="@drawable/ic_toc" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/category_classical">
+
+            <TextView
+                android:id="@+id/classical"
+                style="@style/CategoryStyle"
+                android:text="@string/category_classical" />
+
+            <ImageView
+                android:id="@+id/classical_list"
+                style="@style/ListStyle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:contentDescription="@string/expand"
+                android:src="@drawable/ic_toc" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/category_library">
+
+            <TextView
+                android:id="@+id/library"
+                style="@style/CategoryStyle"
+                android:text="@string/category_library" />
+
+            <ImageView
+                android:id="@+id/library_list"
+                style="@style/ListStyle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:contentDescription="@string/expand"
+                android:src="@drawable/ic_toc" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

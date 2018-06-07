@@ -1,0 +1,16 @@
+<resources>
+    <!-- add name to app & sub directory categories-->
+    <string name="app_name">Mini Player</string>
+    <string name="category_pop">Pop</string>
+    <string name="category_rock">Rock</string>
+    <string name="category_classical">Classical</string>
+    <string name="category_library">My Library</string>
+    <string name="sub_cat_np">Now Playing</string>
+    <string name="expand">Expand</string>
+    <string name="play">Play</string>
+    <string name="np1">Now Playing Button</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="play_image">Turntable</string>
+    <string name="pause_button">Pause</string>
+    <string name="stop_button">Stop</string>
+</resources>
