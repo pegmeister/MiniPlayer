@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class ClassicalActivity extends AppCompatActivity {
 
+    public static final String KEY_SONG_CLASSICAL = "KEY_SONG_CLASSICAL";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class ClassicalActivity extends AppCompatActivity {
         songs.add(new Song("Brandenburg Concert No.3", "Bach"));
 
         // Create an Custom Adapter called SongAdapter to create playlist items
-        SongAdapter adapter = new SongAdapter(this, songs, R.color.category_classical);
+        final SongAdapter adapter = new SongAdapter(this, songs, R.color.category_classical);
 
         ListView listView = findViewById(R.id.list);
 
@@ -41,8 +43,12 @@ public class ClassicalActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Toast.makeText(ClassicalActivity.this, "Start Playing", Toast.LENGTH_SHORT).show();
 
+                // when user click song from list, song title is sent to NowPlayingActivity
+                Song item = adapter.getItem(position);
+
                 // Create a new intent to open the NowPlayingActivity
                 Intent classicalSongIntent = new Intent(ClassicalActivity.this, NowPlayingActivity.class);
+                classicalSongIntent.putExtra(KEY_SONG_CLASSICAL, item.getSongName());
 
                 // Start the new ClassicalActivity
                 startActivity(classicalSongIntent);

@@ -18,7 +18,7 @@
             <TextView
                 android:id="@+id/play"
                 style="@style/NowplayingStyle"
-                android:text="@string/now_playing"
+                tools:text="song title"
                 android:textColor="@android:color/white" />
 
             <ImageView

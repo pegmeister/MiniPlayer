@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class RockActivity extends AppCompatActivity {
 
+    public static final String KEY_SONG_ROCK = "KEY_SONG_ROCK";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class RockActivity extends AppCompatActivity {
         songs.add(new Song("I Don't Want To Miss A Thing", "Aerosmith"));
 
         // Create an Custom Adapter called SongAdapter to create playlist items
-        SongAdapter adapter = new SongAdapter(this, songs, R.color.category_rock);
+        final SongAdapter adapter = new SongAdapter(this, songs, R.color.category_rock);
 
         ListView listView = findViewById(R.id.list);
 
@@ -40,8 +42,13 @@ public class RockActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Toast.makeText(RockActivity.this, "Song Clicked", Toast.LENGTH_SHORT).show();
 
+                // when user click song from list, song title is sent to NowPlayingActivity
+                Song item = adapter.getItem(position);
+
                 // Create a new intent to open the NowPlayingActivity
                 Intent rockSongIntent = new Intent(RockActivity.this, NowPlayingActivity.class);
+                rockSongIntent.putExtra(KEY_SONG_ROCK, item.getSongName());
+
 
                 // Start the new RockActivity
                 startActivity(rockSongIntent);

@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class PopActivity extends AppCompatActivity {
 
+    public static final String KEY_SONG = "KEY_SONG";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class PopActivity extends AppCompatActivity {
         songs.add(new Song("Smooth Criminal", "Michael Jackson"));
 
         // Create an Custom Adapter called SongAdapter to create playlist items
-        SongAdapter adapter = new SongAdapter(this, songs, R.color.category_pop);
+        final SongAdapter adapter = new SongAdapter(this, songs, R.color.category_pop);
 
         ListView listView = findViewById(R.id.list);
 
@@ -41,8 +43,12 @@ public class PopActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Toast.makeText(PopActivity.this, "Song Clicked", Toast.LENGTH_SHORT).show();
 
+                // when user click song from list, song title is sent to NowPlayingActivity
+                Song item = adapter.getItem(position);
+
                 // Create a new intent to open the NowPlayingActivity
                 Intent popSongIntent = new Intent(PopActivity.this, NowPlayingActivity.class);
+                popSongIntent.putExtra(KEY_SONG, item.getSongName());
 
                 // Start the new NowPlayingActivity
                 startActivity(popSongIntent);

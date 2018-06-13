@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class MyLibraryActivity extends AppCompatActivity {
 
+    public static final String KEY_SONG_LIBRARY = "KEY_SONG_LIBRARY";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class MyLibraryActivity extends AppCompatActivity {
         songs.add(new Song("Faith", "George Michael"));
 
         // Create an Custom Adapter called SongAdapter, to create playlist items
-        SongAdapter adapter = new SongAdapter(this, songs, R.color.category_library);
+        final SongAdapter adapter = new SongAdapter(this, songs, R.color.category_library);
 
         ListView listView = findViewById(R.id.list);
 
@@ -41,8 +43,12 @@ public class MyLibraryActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Toast.makeText(MyLibraryActivity.this, "Song Clicked", Toast.LENGTH_SHORT).show();
 
+                // when user click song from list, song title is sent to NowPlayingActivity
+                Song item = adapter.getItem(position);
+
                 // Create a new intent to open the NowPlayingActivity
                 Intent librarySongIntent = new Intent(MyLibraryActivity.this, NowPlayingActivity.class);
+                librarySongIntent.putExtra(KEY_SONG_LIBRARY, item.getSongName());
 
                 // Start the new LibraryActivity
                 startActivity(librarySongIntent);
