@@ -52,6 +52,12 @@ public class MyLibraryActivity extends AppCompatActivity {
 
                 // Start the new LibraryActivity
                 startActivity(librarySongIntent);
+
+                //another alternative to display toast msg get the current song
+                //Song song = songs.get(i);
+                //Toast toast = Toast.makeText(MyLibraryActivity.this, "Now playing: "
+                //+song.getSongName() + song.getArtist(),Toast,LENGTH_LONG);
+                //toast.show();
             }
         });
     }

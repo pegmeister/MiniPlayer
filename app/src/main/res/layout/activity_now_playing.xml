@@ -21,16 +21,35 @@
                 tools:text="song title"
                 android:textColor="@android:color/white" />
 
+            <TextView
+                android:id="@+id/play1"
+                style="@style/NowplayingStyle"
+                tools:text="song title"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/play2"
+                style="@style/NowplayingStyle"
+                tools:text="song title"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/play3"
+                style="@style/NowplayingStyle"
+                android:textColor="@android:color/white"
+                tools:text="song title" />
+
             <ImageView
+                android:id="@id/image"
                 android:layout_width="match_parent"
-                android:layout_height="279dp"
+                android:layout_height="287dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="129dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="113dp"
                 android:contentDescription="@string/now_playing"
                 android:src="@drawable/play_image1" />
-
         </RelativeLayout>
 
         <RelativeLayout

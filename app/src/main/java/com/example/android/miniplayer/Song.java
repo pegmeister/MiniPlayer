@@ -3,25 +3,25 @@ package com.example.android.miniplayer;
 public class Song {
 
     // initiate string variables
-    private String mSongName;
-    private String mArtistName;
+    private String song;
+    private String artist;
 
 
-    // create a new Song constructor to take 2 imput params: song name and artist name
+    // create a new Song constructor to take 2 input params: song name and artist name
 
     public Song(String songName, String artistName) {
-        mSongName = songName;
-        mArtistName = artistName;
+        song = songName;
+        artist = artistName;
     }
 
     // get the song name from the playlist
     public String getSongName() {
-        return mSongName;
+        return song;
     }
 
     // get artist name from the playlist
     public String getArtisName() {
-        return mArtistName;
+        return artist;
     }
 
 

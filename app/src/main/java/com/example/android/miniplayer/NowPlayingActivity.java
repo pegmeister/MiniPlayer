@@ -38,7 +38,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             playingSongRock = intent.getStringExtra(KEY_SONG_ROCK);
         }
 
-        TextView playingRockSongText = findViewById(R.id.play);
+        TextView playingRockSongText = findViewById(R.id.play1);
         playingRockSongText.setText(playingSongRock);
 
         // method for displaying ClassicalSongTitle
@@ -49,7 +49,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             playingSongClassical = intent.getStringExtra(KEY_SONG_CLASSICAL);
         }
 
-        TextView playingClassicalSongText = findViewById(R.id.play);
+        TextView playingClassicalSongText = findViewById(R.id.play2);
         playingClassicalSongText.setText(playingSongClassical);
 
         // method for displaying LibrarySongTitle
@@ -60,7 +60,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             playingSongLibrary = intent.getStringExtra(KEY_SONG_LIBRARY);
         }
 
-        TextView playingLibrarySongText = findViewById(R.id.play);
+        TextView playingLibrarySongText = findViewById(R.id.play3);
         playingLibrarySongText.setText(playingSongLibrary);
 
         // set onClickListener to Pause music when user clicks pause button
